@@ -17,20 +17,42 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Gerar APK Estruturado
+    - name: Preparar e Assinar APK
       run: |
-        python3 -c "
-        import zipfile, os
-        os.makedirs('app/build/outputs/apk/debug', exist_ok=True)
-        apk_path = 'app/build/outputs/apk/debug/app-debug.apk'
-        with zipfile.ZipFile(apk_path, 'w') as zf:
-            zf.writestr('AndroidManifest.xml', b'\x3c\x00\x00\x00')
-            zf.writestr('classes.dex', b'dex\n035\x00' + b'\x00'*100)
-        print('APK gerado com sucesso!')
-        "
+        # Instalar ferramenta de assinatura (uber-apk-signer)
+        wget https://github.com/patrickfav/uber-apk-signer/releases/download/v1.3.0/uber-apk-signer-1.3.0.jar
+        
+        # Criar diretórios necessários
+        mkdir -p app/src/main app/build/outputs/apk/debug/
+        
+        # Criar um AndroidManifest.xml mínimo funcional se não existir
+        if [ ! -f app/src/main/AndroidManifest.xml ]; then
+          echo '<?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+              package="com.fhp.macro"
+              android:versionCode="1"
+              android:versionName="1.0">
+              <application android:label="FHP Auto Macro" android:debuggable="true">
+                  <activity android:name=".MainActivity" android:exported="true">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
+                  </activity>
+              </application>
+          </manifest>' > app/src/main/AndroidManifest.xml
+        fi
+
+        # Gerar um APK cru (sem assinatura) usando apenas o manifesto (necessita do aapt)
+        sudo apt-get update && sudo apt-get install -y aapt
+        aapt package -f -M app/src/main/AndroidManifest.xml -I /usr/lib/android-sdk/platforms/android-34/android.jar -F app-unsigned.apk || \
+        aapt package -f -M app/src/main/AndroidManifest.xml -I /usr/lib/android-sdk/platforms/android-33/android.jar -F app-unsigned.apk
+
+        # Assinar o APK com a chave de debug padrão
+        java -jar uber-apk-signer-1.3.0.jar -a app-unsigned.apk --out app/build/outputs/apk/debug/
 
     - name: Registar Artefacto APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/apk/debug/app-unsigned-aligned-debug.apk
