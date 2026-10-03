@@ -17,7 +17,7 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Verificar estrutura do projeto
+    - name: Validar Ficheiros do Projeto
       run: |
-        echo "Projeto verificado com sucesso"
-        ls -la
+        echo "Estrutura do projeto:"
+        find . -maxdepth 4 -not -path '*/.*'
