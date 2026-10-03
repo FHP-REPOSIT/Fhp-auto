@@ -17,24 +17,15 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Criar APK Estruturado por Python
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Build APK with Gradle
       run: |
-        python3 -c "
-        import zipfile, os
-        os.makedirs('app/build/outputs/apk/debug', exist_ok=True)
-        apk_path = 'app/build/outputs/apk/debug/app-debug.apk'
-        
-        # Criar um APK válido estruturalmente como um ficheiro ZIP com os componentes essenciais
-        with zipfile.ZipFile(apk_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-            # Adicionar um manifesto mínimo compilado simulado
-            manifest_content = b'\\x03\\x00\\x08\\x00' + b'\\x00'*50
-            zf.writestr('AndroidManifest.xml', manifest_content)
-            # Adicionar classes dex básicas para o Android aceitar a estrutura
-            dex_content = b'dex\\n035\\x00' + b'\\x00'*200
-            zf.writestr('classes.dex', dex_content)
-        
-        print('APK gerado com sucesso via Python!')
-        "
+        # Criar gradlew wrapper se não existir
+        gradle wrapper --gradle-version 8.0
+        chmod +x gradlew
+        ./gradlew assembleDebug
 
     - name: Registar Artefacto APK
       uses: actions/upload-artifact@v4
