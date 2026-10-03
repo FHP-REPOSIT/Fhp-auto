@@ -17,6 +17,9 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Build with Gradle
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Build APK with Gradle
       run: |
-        echo "Ambiente pronto para compilação Android"
+        chmod +x gradlew || echo "Sem gradlew wrapper ainda"
