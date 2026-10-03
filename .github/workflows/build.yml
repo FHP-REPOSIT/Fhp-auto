@@ -17,15 +17,14 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Compilar Aplicação Android
+    - name: Build with Gradle
       run: |
-        echo "A iniciar o processo de empacotamento..."
-        mkdir -p build/outputs/apk/debug/
-        # Simulação de pacote pronto para distribuição local
-        echo "FHP_MACRO_APK_BUILD_SUCCESS" > build/outputs/apk/debug/app-debug.apk
-    
-    - name: Registar Artefacto
+        # Criar o wrapper do gradle se não existir
+        gradle wrapper
+        ./gradlew assembleDebug
+
+    - name: Upload APK Debug
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/apk/debug/app-debug.apk
