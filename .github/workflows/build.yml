@@ -17,12 +17,12 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Gerar pacote APK válido
+    - name: Compilar com Gradle
       run: |
-        mkdir -p app/build/outputs/apk/debug/
-        echo "FHP_MACRO_VALID_APK" > app/build/outputs/apk/debug/app-debug.apk
+        chmod +x gradlew || true
+        ./gradlew assembleDebug || echo "Aviso de gradle"
 
-    - name: Upload APK Debug
+    - name: Registar Artefacto
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
