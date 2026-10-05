@@ -1,18 +1,15 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.application'
 
 android {
     namespace 'com.fhp.macro'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.fhp.macro"
+        applicationId 'com.fhp.macro'
         minSdk 24
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
 
     buildTypes {
@@ -22,6 +19,15 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+    }
+}
+
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
 }
