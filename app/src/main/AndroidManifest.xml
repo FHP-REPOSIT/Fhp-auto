@@ -22,7 +22,8 @@
         <service
             android:name=".MacroAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="false">
+            android:exported="true"
+            android:label="FHP Auto Macro">
 
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />

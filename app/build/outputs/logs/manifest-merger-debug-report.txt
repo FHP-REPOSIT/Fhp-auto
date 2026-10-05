@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-39:12
-INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-39:12
-INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-39:12
-INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-39:12
+ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-40:12
+INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-40:12
+INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-40:12
+INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:1-40:12
 MERGED from [androidx.core:core:1.13.1] /home/codespace/.gradle/caches/9.7.1/transforms/740a25ef44db489a61abcb23627f4422/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.core:core-ktx:1.13.1] /home/codespace/.gradle/caches/9.7.1/transforms/eea08dad0bbee782ea8dcb8b2b006b44/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codespace/.gradle/caches/9.7.1/transforms/3c5d239547cb35aa485ec6a16d424bde/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
@@ -24,8 +24,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/codespace/
 	xmlns:android
 		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:3:11-69
 application
-ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:6:5-37:19
-INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:6:5-37:19
+ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:6:5-38:19
+INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:6:5-38:19
 MERGED from [androidx.core:core:1.13.1] /home/codespace/.gradle/caches/9.7.1/transforms/740a25ef44db489a61abcb23627f4422/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.13.1] /home/codespace/.gradle/caches/9.7.1/transforms/740a25ef44db489a61abcb23627f4422/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codespace/.gradle/caches/9.7.1/transforms/3c5d239547cb35aa485ec6a16d424bde/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
@@ -61,25 +61,27 @@ ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:17:17-77
 	android:name
 		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:17:27-74
 service#com.fhp.macro.MacroAccessibilityService
-ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:22:9-35:19
+ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:22:9-36:19
+	android:label
+		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:26:13-43
 	android:exported
-		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:25:13-37
+		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:25:13-36
 	android:permission
 		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:24:13-79
 	android:name
 		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:23:13-54
 intent-filter#action:name:android.accessibilityservice.AccessibilityService
-ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:27:13-29:29
+ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:28:13-30:29
 action#android.accessibilityservice.AccessibilityService
-ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:28:17-92
+ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:29:17-92
 	android:name
-		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:28:25-89
+		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:29:25-89
 meta-data#android.accessibilityservice
-ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:31:13-33:72
+ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:32:13-34:72
 	android:resource
-		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:33:17-69
+		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:32:17-60
+		ADDED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml:33:17-60
 uses-sdk
 INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /workspaces/Fhp-auto/app/src/main/AndroidManifest.xml

@@ -2,5 +2,9 @@
     {
         "merged": "com.fhp.macro.app-debug-11:/xml_accessibility_service_config.xml.flat",
         "source": "com.fhp.macro.app-main-13:/xml/accessibility_service_config.xml"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/9.7.1/com.fhp.macro.app-debug-11:/xml_accessibility_service_config.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/9.7.1/com.fhp.macro.app-main-13:/xml/accessibility_service_config.xml"
     }
 ]
