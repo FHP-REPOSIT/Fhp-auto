@@ -1,9 +1,11 @@
 package com.fhp.macro
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.Settings
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -39,6 +41,7 @@ class MainActivity : Activity() {
             setOnClickListener {
                 actions.add("👆 Clique")
                 atualizarLista()
+
                 Toast.makeText(
                     this@MainActivity,
                     "Clique adicionado",
@@ -52,6 +55,7 @@ class MainActivity : Activity() {
             setOnClickListener {
                 actions.add("⌨️ Texto")
                 atualizarLista()
+
                 Toast.makeText(
                     this@MainActivity,
                     "Texto adicionado",
@@ -110,6 +114,16 @@ class MainActivity : Activity() {
             }
         }
 
+        val btnAccessibility = Button(this).apply {
+            text = "⚙ Ativar Acessibilidade"
+
+            setOnClickListener {
+                startActivity(
+                    Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+                )
+            }
+        }
+
         layout.addView(title)
         layout.addView(actionList)
         layout.addView(btnClick)
@@ -119,6 +133,7 @@ class MainActivity : Activity() {
         layout.addView(btnStart)
         layout.addView(btnStop)
         layout.addView(btnClear)
+        layout.addView(btnAccessibility)
 
         setContentView(layout)
     }

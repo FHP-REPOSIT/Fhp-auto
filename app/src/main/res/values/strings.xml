@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">FHP Auto Macro</string>
+
+    <string name="accessibility_service_description">
+        Serviço de acessibilidade do FHP Auto Macro
+    </string>
+
+</resources>
